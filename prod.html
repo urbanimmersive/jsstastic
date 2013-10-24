@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <!-- vim: ts=2 sw=2 :
+  -->
+  <head>
+  </head>
+  <body class="container">
+
+    <!-- want to include a js app? paste in this one-liner -->
+    <script>
+        // CONFIGURE your target ID here
+        var targetId = 'myApp';
+        function loadasync(f) {
+            var d=document,
+            h=d.getElementsByTagName('head')[0],
+            s=d.createElement('script');
+            s.type='text/javascript';
+            s.async=true;
+            s.id='jsapp_MyApp';
+            s.targetId=targetId;
+            s.src=f+'?targetId='+targetId;
+            h.appendChild(s);
+        };
+        loadasync('manifest-debug.js', targetId);
+    </script>
+    <div id="myApp">App loading</div>
+
+    <script>alert('do not block me');</script>
+  </body>
+</html>
+
